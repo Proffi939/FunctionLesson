@@ -9,3 +9,6 @@ Hello world
 * элемент 2
 
 * элемент 3
+1. num
+2. num
+3. num
