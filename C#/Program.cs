@@ -1,5 +1,4 @@
 ﻿
-
 int [] CreateRndArray(int size, int min, int max)
 {    
     int [] array = new int [size];
@@ -76,5 +75,79 @@ int CountEvenInArray(int [] array)
     return count;
 }
 
+int choice = 0;
 
-while(num % 2 == 0 &&)
+while(choice != 4)
+{
+    Console.WriteLine($"Введите номер задания ");
+    Console.WriteLine($" 1 первое задание ");
+    Console.WriteLine($" 2 второе задание ");
+    Console.WriteLine($" 3 третье задание ");
+    Console.WriteLine($" 4 выход ");
+    choice = Convert.ToInt32(Console.ReadLine());
+    // первое задание
+    if (choice == 1) 
+    {
+        bool result = false;
+        while (result == false)
+        {
+            Console.WriteLine("Введити число или q");
+            object input = Console.ReadLine();
+            try
+            {
+                int num = Convert.ToInt32(input);
+                if (SumNum(num) % 2 == 0)
+                {
+                    result = true;
+                }
+            }
+            catch 
+            {
+                char chr = Convert.ToChar(input);
+                
+                if (chr == 'q')
+                {
+                    result = true;
+                }
+            }
+        }
+        Console.WriteLine("проверка 1 заданеия завершена");
+    }
+    //второк задание
+    if (choice == 2)
+    {
+        Console.WriteLine("Введити размер случайного массива ");
+        int size = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Введити минимальное значение элемента ");
+        int min = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Введити максимальное значение элемента ");
+        int max = Convert.ToInt32(Console.ReadLine());
+        int [] arr = CreateRndArray(size, min, max);
+        Console.WriteLine("Массив:");
+        WriteArray(arr);
+        Console.WriteLine("Четных элементов:");
+        Console.WriteLine(CountEvenInArray(arr));
+    }
+    //третье задание
+    if (choice == 3)
+    {
+        Console.WriteLine("Введити размер случайного массива ");
+        int size = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Введити минимальное значение элемента ");
+        int min = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Введити максимальное значение элемента ");
+        int max = Convert.ToInt32(Console.ReadLine());
+        int [] arr = CreateRndArray(size, min, max);
+        Console.WriteLine("Массив:"); 
+        Console.WriteLine("");
+        WriteArray(arr);
+        int [] revarr = ReverseArray(arr);
+        Console.WriteLine("");
+        Console.WriteLine("Обратный массив: ");
+        WriteArray(revarr); 
+     
+    }
+
+}
+Console.WriteLine("end");
+
